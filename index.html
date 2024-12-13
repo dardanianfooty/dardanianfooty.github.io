@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosovo's World Cup Draw</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- Flag icons library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        body {
+            background: url('images/BG.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Blurring effect */
+        .blurred-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/BG.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        /* Gradient overlay */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 45, 114, 0.9), rgba(0, 59, 139, 0.9));
+            z-index: -1;
+        }
+
+        #logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        /* Container for the group */
+        .group-container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            width: 320px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .group-title {
+            font-size: 28px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .group-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .group-list li {
+            animation: teamFade 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            font-size: 20px;
+            margin: 10px 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .flag-icon {
+            margin-right: 15px;
+            width: 35px;
+            height: 22px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #4c8baf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Effects & Animations */
+        button:hover {
+            background-color: #32769d;
+        }
+
+        .group-list li:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px);
+        }
+
+        @keyframes teamFade {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="images/Logo Kosovo Football.png" alt="Kosovo Football Logo">
+
+    <div class="group-container">
+        <h2 class="group-title">My Group</h2>
+        <ul id="results" class="group-list">
+            <!-- Generated group -->
+        </ul>
+        <button id="simulateButton" onclick="simulateGroupWithKosovo()">Simulate Group</button>
+    </div>
+
+    <div class="blurred-background"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
